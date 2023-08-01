@@ -1,0 +1,22 @@
+{
+  "name": "core_module_question_1",
+  "version": "1.0.0",
+  "description": "section 1 assignment on core modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oghene-ella/Core_Modules.git"
+  },
+  "keywords": [
+    "inbuilt_modules"
+  ],
+  "author": "Ellahhh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oghene-ella/Core_Modules/issues"
+  },
+  "homepage": "https://github.com/oghene-ella/Core_Modules#readme"
+}
