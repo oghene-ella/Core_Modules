@@ -18,3 +18,18 @@ fs.mkdir(studentDirectory, (error) => {
     }
 });
 
+
+/* 
+! Question 2, Sub Question 2
+! In the Students directory, create a file named user.js
+*/
+
+const userFile = path.join(__dirname, "Students", "user.js");
+fs.writeFile(userFile, "", (error) => {
+    if (error){
+        console.log(`Could not create file: ${error}`);
+        return
+    }
+    console.log(`Successfully created file: ${userFile}`)
+})
+
