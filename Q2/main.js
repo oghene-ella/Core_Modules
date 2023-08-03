@@ -41,6 +41,7 @@ const UpdatedStudentName = path.join(__dirname, "Names");
 fs.rename(studentDirectory, UpdatedStudentName, (error) => {
     if (error){
         console.log(`Could not rename folder: ${error}`);
+        return
     }
     console.log(`Successfully renamed "Students" folder to Names`)
 })
@@ -50,12 +51,27 @@ fs.rename(studentDirectory, UpdatedStudentName, (error) => {
 ! Add your name as content to the file user.js
 */
 
-const userNameContent = "Oghenekaro Emmanuella Avwerosuoghene";
+// const userNameContent = "Oghenekaro Emmanuella Avwerosuoghene";
 const userFileNew = path.join(__dirname, "Names", "user.js");
 
 fs.writeFile(userFileNew, userNameContent, (error) => {
     if (error){
         console.log(`Could not write to a file`)
+        return
     }
     console.log(`Successfully written my name to the file`)
 })
+
+/* 
+! Question 2, Sub Question 5
+! Update the file and add your age, sex, nationality, phone number and any other information about yourself
+*/
+
+const otherUserContent = "\n21\nFemale\nNigerian\n08183238338\nFun Fact: I'm a Chelsea Fan";
+fs.appendFile(userFileNew, otherUserContent, (error) => {
+    if (error) {
+        console.log(`Could not update the user.js file`);
+        return
+    }
+    console.log(`Successfully updated the user.js file`)
+});
