@@ -51,7 +51,7 @@ fs.rename(studentDirectory, UpdatedStudentName, (error) => {
 ! Add your name as content to the file user.js
 */
 
-// const userNameContent = "Oghenekaro Emmanuella Avwerosuoghene";
+const userNameContent = "Oghenekaro Emmanuella Avwerosuoghene";
 const userFileNew = path.join(__dirname, "Names", "user.js");
 
 fs.writeFile(userFileNew, userNameContent, (error) => {
@@ -74,4 +74,20 @@ fs.appendFile(userFileNew, otherUserContent, (error) => {
         return
     }
     console.log(`Successfully updated the user.js file`)
+});
+
+
+/* 
+! Question 2, Sub Question 6
+! Update the file user.js to {your_name}.js eg daniel_adesoji.js
+*/
+
+const UpdatedUserFile = path.join(__dirname, "Names/oghenekaro.js");
+// console.log(UpdatedUserFile, userFileNew);
+fs.rename(userFileNew, UpdatedUserFile, (error) => {
+  if (error) {
+    console.log(`Could not rename folder: ${error}`);
+    return;
+  }
+  console.log(`Successfully renamed "Students" folder to Names`);
 });
