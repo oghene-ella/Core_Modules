@@ -33,3 +33,14 @@ fs.writeFile(userFile, "", (error) => {
     console.log(`Successfully created file: ${userFile}`)
 })
 
+/* 
+! Question 2, Sub Question 3
+! Update the Students directory to “Names”
+*/
+const UpdatedStudentName = path.join(__dirname, "Names");
+fs.rename(studentDirectory, UpdatedStudentName, (error) => {
+    if (error){
+        console.log(`Could not rename folder: ${error}`);
+    }
+    console.log(`Successfully renamed "Students" folder to Names`)
+})
