@@ -108,3 +108,15 @@ fs.readFile(nameFile, "utf8", (error, file_content) => {
     }
     console.log(file_content)
 });
+
+/* 
+! Question 2, Sub Question 8
+! Delete the file {your_name}.js
+*/
+fs.rm(nameFile, (error) => {
+    if (error) {
+        console.log(`Could not delete the file`);
+        return
+    }
+    console.log(`Successfully deleted`)
+})
