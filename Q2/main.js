@@ -120,3 +120,15 @@ fs.rm(nameFile, (error) => {
     }
     console.log(`Successfully deleted`)
 })
+
+/* 
+! Question 2, Sub Question 9
+! Delete the directory “Names”
+*/
+fs.rmdir(UpdatedStudentName, (error) => {
+  if (error) {
+    console.log(`Could not delete the Names folder`);
+    return;
+  }
+  console.log(`Successfully deleted`);
+});
