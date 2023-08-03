@@ -44,3 +44,18 @@ fs.rename(studentDirectory, UpdatedStudentName, (error) => {
     }
     console.log(`Successfully renamed "Students" folder to Names`)
 })
+
+/* 
+! Question 2, Sub Question 4
+! Add your name as content to the file user.js
+*/
+
+const userNameContent = "Oghenekaro Emmanuella Avwerosuoghene";
+const userFileNew = path.join(__dirname, "Names", "user.js");
+
+fs.writeFile(userFileNew, userNameContent, (error) => {
+    if (error){
+        console.log(`Could not write to a file`)
+    }
+    console.log(`Successfully written my name to the file`)
+})
