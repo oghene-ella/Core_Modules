@@ -6,8 +6,8 @@ const path = require("path");
 ! Question 2, Sub Question 1
 ! Create directory/folder named: “Students”
 */
-const studentDirectory = path.join(__dirname, "Students");
 
+const studentDirectory = path.join(__dirname, "Students");
 fs.mkdir(studentDirectory, (error) => {
     if (error) {
         console.log(`Could not create directory: ${error}`)
@@ -33,10 +33,12 @@ fs.writeFile(userFile, "", (error) => {
     console.log(`Successfully created file: ${userFile}`)
 })
 
+
 /* 
 ! Question 2, Sub Question 3
 ! Update the Students directory to “Names”
 */
+
 const UpdatedStudentName = path.join(__dirname, "Names");
 fs.rename(studentDirectory, UpdatedStudentName, (error) => {
     if (error){
@@ -46,11 +48,11 @@ fs.rename(studentDirectory, UpdatedStudentName, (error) => {
     console.log(`Successfully renamed "Students" folder to Names`)
 })
 
+
 /* 
 ! Question 2, Sub Question 4
 ! Add your name as content to the file user.js
 */
-
 const userNameContent = "Oghenekaro Emmanuella Avwerosuoghene";
 const userFileNew = path.join(__dirname, "Names", "user.js");
 
@@ -62,12 +64,13 @@ fs.writeFile(userFileNew, userNameContent, (error) => {
     console.log(`Successfully written my name to the file`)
 })
 
+
 /* 
 ! Question 2, Sub Question 5
 ! Update the file and add your age, sex, nationality, phone number and any other information about yourself
 */
-
 const otherUserContent = "\n21\nFemale\nNigerian\n08183238338\nFun Fact: I'm a Chelsea Fan";
+
 fs.appendFile(userFileNew, otherUserContent, (error) => {
     if (error) {
         console.log(`Could not update the user.js file`);
@@ -81,13 +84,27 @@ fs.appendFile(userFileNew, otherUserContent, (error) => {
 ! Question 2, Sub Question 6
 ! Update the file user.js to {your_name}.js eg daniel_adesoji.js
 */
-
 const UpdatedUserFile = path.join(__dirname, "Names/oghenekaro.js");
-// console.log(UpdatedUserFile, userFileNew);
+//  console.log(UpdatedUserFile, userFileNew);
+
 fs.rename(userFileNew, UpdatedUserFile, (error) => {
   if (error) {
     console.log(`Could not rename folder: ${error}`);
     return;
   }
   console.log(`Successfully renamed "Students" folder to Names`);
+});
+
+
+/* 
+! Question 2, Sub Question 7
+! Read the contents from {your_name}.js. User fs.open or fs.readFile
+*/
+const nameFile = path.join(__dirname, "Names", "oghenekaro.js");
+
+fs.readFile(nameFile, "utf8", (error, file_content) => {
+    if (error) {
+        console.log(`Could not read a file`);
+    }
+    console.log(file_content)
 });
